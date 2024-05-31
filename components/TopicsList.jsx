@@ -1,3 +1,5 @@
+import RemoveBtn from "./RemoveBtn";
+
 export default function TopicsList()
 {
     return (
@@ -8,6 +10,9 @@ export default function TopicsList()
             </div>
 
             {/* دکمه حذف */}
+            <div>
+                <RemoveBtn />
+            </div>
         </>
     )
 }
