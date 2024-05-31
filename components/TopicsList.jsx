@@ -6,17 +6,20 @@ export default function TopicsList()
 {
     return (
         <>
-            <div>
-            <h2>عنوان تاپیک</h2>
-                <div>توضیحات تاپیک</div>
-            </div>
+            <div className="p-4 border border-slate-300 my-3 flex justify-between gap-5 items-start">
+                <div>
+                    <h2 className="font-bold text-2xl">عنوان تاپیک</h2>
+                    <div>توضیحات تاپیک</div>
+                </div>
+            
 
-            {/* دکمه حذف */}
-            <div>
-                <RemoveBtn />
-                <Link href={'/editTopic/123'}>
-                    <HiPencilAlt size={24} />
-                </Link>
+                {/* دکمه حذف */}
+                <div className="flex gap-2">
+                    <RemoveBtn />
+                    <Link href={'/editTopic/123'}>
+                        <HiPencilAlt size={24} />
+                    </Link>
+                </div>
             </div>
         </>
     )
