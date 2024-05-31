@@ -1,4 +1,6 @@
+import Link from "next/link";
 import RemoveBtn from "./RemoveBtn";
+import { HiPencilAlt } from "react-icons/hi";
 
 export default function TopicsList()
 {
@@ -12,6 +14,9 @@ export default function TopicsList()
             {/* دکمه حذف */}
             <div>
                 <RemoveBtn />
+                <Link href={'/editTopic/123'}>
+                    <HiPencilAlt size={24} />
+                </Link>
             </div>
         </>
     )
