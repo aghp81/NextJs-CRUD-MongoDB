@@ -8,3 +8,8 @@ export async function POST(request) {
     await Topic.create({title, description})
     return NextResponse.json({message:" تاپیک ایجاد شد"}, {status: 201})
 }
+
+export async function GET(){
+    await connectMongoDB()
+    await Topic.find()
+}
