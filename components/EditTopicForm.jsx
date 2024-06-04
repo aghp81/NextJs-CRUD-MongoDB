@@ -26,7 +26,9 @@ export default function EditTopicForm({ id, title, description }) {
                 throw new Error("خطا در بروزرسانی تاپیک")
             }
 
-            router.push("/")
+            
+            router.push("/");
+            router.refresh();
 
         } catch (error) {
             console.log(error)
