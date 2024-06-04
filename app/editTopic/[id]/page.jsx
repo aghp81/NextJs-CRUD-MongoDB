@@ -16,11 +16,12 @@ const getTopicById = async(id) => {
     }
 }
 
-export default function EditTopic({ params }) {
+export default async function EditTopic({ params }) {
 
     // دریافت آی دی مربوطه
     const { id } = params;
-    console.log("id: ", id);
-
-    return <EditTopicForm />    
+    // console.log("id: ", id);
+    const {topic} = await getTopicById(id);
+    const { title, description } = topic;
+    return <EditTopicForm id={id} title={title} description={description} />    
 }
