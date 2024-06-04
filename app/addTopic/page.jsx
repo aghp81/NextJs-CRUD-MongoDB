@@ -6,12 +6,25 @@ export default function AddTopic() {
     const [title, setTitle] = useState("")
     const [description, setDescription] = useState("")
 
-    const handleSubmit = (e) =>{
+    const handleSubmit = async (e) =>{
         e.preventDefault();
 
         if (!title || !description) {
             alert ("تایتل و توضیحات الزامی است.");
             return;
+        }
+
+        // ارسال دیتا به دیتابیس
+        try {
+            const res = await fetch('http://localhost:3000/api/topics', {
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json"
+                },
+                body: JSON.stringify({ title, description })
+            });
+        } catch (error) {
+            
         }
     }
     
