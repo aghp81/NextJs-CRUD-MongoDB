@@ -6,8 +6,13 @@ export default function AddTopic() {
     const [title, setTitle] = useState("")
     const [description, setDescription] = useState("")
 
-    const handleSubmit = () =>{
+    const handleSubmit = (e) =>{
+        e.preventDefault();
 
+        if (!title || !description) {
+            alert ("تایتل و توضیحات الزامی است.");
+            return;
+        }
     }
     
     return <form onSubmit={handleSubmit} className="flex flex-col gap-3">
