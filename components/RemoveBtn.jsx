@@ -1,6 +1,7 @@
 "use client"
 
 import { HiOutlineTrash } from "react-icons/hi"
+import { useRouter } from "next/navigation"; // برای ریدایرکت کردن
 
 export default function RemoveBtn( {id} ) {
 
