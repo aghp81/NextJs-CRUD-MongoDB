@@ -1,10 +1,13 @@
 "use client"
 
 import { useState } from "react"
+import { useRouter } from "next/navigation"
 
 export default function AddTopic() {
     const [title, setTitle] = useState("")
     const [description, setDescription] = useState("")
+
+    const router = useRouter()
 
     const handleSubmit = async (e) =>{
         e.preventDefault();
@@ -23,8 +26,15 @@ export default function AddTopic() {
                 },
                 body: JSON.stringify({ title, description })
             });
+
+            // اگر اطلاعات ارسال شد ریدایرکت به صفحه اصلی
+            if (res.ok) {
+                router.push('/')
+            }else {
+                throw new Error("ایجاد تاپیک انجام نشد")
+            }
         } catch (error) {
-            
+            console.log(error)
         }
     }
     
