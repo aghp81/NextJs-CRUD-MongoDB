@@ -1,3 +1,5 @@
+"use client"
+
 export default function EditTopicForm({ id, title, description }) {
     return (
         <form className="flex flex-col gap-3">
